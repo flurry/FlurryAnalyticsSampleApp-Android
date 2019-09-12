@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">AnalyticsSampleApp</string>
+    <string name="title_event">Event</string>
+    <string name="title_crash">Crash</string>
+    <string name="title_more">More</string>
+    <string name="FLURRY_APIKEY">SP53PC5QB35PVJXFBGHY</string>
+    <string name="log_error_class">LOG ERROR CLASS</string>
+    <string name="log_exception">LOG EXCEPTION</string>
+    <string name="log_breadcrumb">LOG BREADCRUMB</string>
+    <string name="force_crash">FORCE CRASH</string>
+    <string name="default_error_class">Default Error Class</string>
+    <string name="default_error_message">Default Error Message</string>
+    <string name="default_error_exception">Default Error Exception</string>
+    <string name="default_breadcrumb_message">Default BreadCrumb Message</string>
+    <string name="default_error_id">Default_Error_Id</string>
+
+    <string-array name="features_spinner" >
+        <item>Get Agent Version</item>
+        <item>Get Release Version</item>
+        <item>Get Add-On Modules</item>
+        <item>Set Version Name</item>
+        <item>Set Report Location</item>
+        <item>Add Origin</item>
+        <item>Set Instant App Name</item>
+        <item>Get Instant App Name</item>
+        <item>Get Flurry Consent</item>
+        <item>Update Flurry Consent</item>
+        <item>Is Session Active</item>
+        <item>Get Session Id</item>
+        <item>Log Page View</item>
+        <item>Set Age</item>
+        <item>Set Gender</item>
+        <item>Set User Id</item>
+        <item>Set Session Origin</item>
+        <item>Add Session Property</item>
+        <item>Open Privacy Dashboard</item>
+    </string-array>
+
+    <string-array name="gender_spinner" >
+        <item>Male</item>
+        <item>Female</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="bool_spinner" >
+        <item>True</item>
+        <item>False</item>
+    </string-array>
+
+    <string-array name="consent_spinner" >
+        <item>Unknown</item>
+        <item>In GDPR scope(with consent)</item>
+        <item>Not in GDPR scope(no consent)</item>
+    </string-array>
+</resources>
