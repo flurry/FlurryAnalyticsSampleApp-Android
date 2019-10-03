@@ -38,14 +38,14 @@ class OtherFeaturesViewModel @Inject constructor() : ViewModel() {
             }
             6 -> postHint(hint1, "Instant App Name")
             9 -> answerSpinnerType.postValue(SpinnerType.CONSENT)
-            13 -> postHint(hint1, "Age", InputType.TYPE_CLASS_NUMBER)
-            14 -> answerSpinnerType.postValue(SpinnerType.GENDER)
-            15 -> postHint(hint1, "User Id")
-            16 -> {
+            12 -> postHint(hint1, "Age", InputType.TYPE_CLASS_NUMBER)
+            13 -> answerSpinnerType.postValue(SpinnerType.GENDER)
+            14 -> postHint(hint1, "User Id")
+            15 -> {
                 postHint(hint1, "Origin Name")
                 postHint(hint2, "Deep Link")
             }
-            17 -> {
+            16 -> {
                 postHint(hint1, "Name")
                 postHint(hint2, "Value")
             }
@@ -71,7 +71,7 @@ class OtherFeaturesViewModel @Inject constructor() : ViewModel() {
             6 -> validateThenLogToFlurry(input1, "Instant app name can not be empty") {
                 FlurryAgent.setInstantAppName(input1)
             }
-            7 -> resultText.postValue(FlurryAgent.getInstantAppName().toString())
+            7 -> resultText.postValue(FlurryAgent.getInstantAppName() ?: "null")
             8 -> resultText.postValue(generateConsentString(FlurryAgent.getFlurryConsent()))
             9 -> createFlurryConsent(answerPos)?.let {
                 FlurryAgent.updateFlurryConsent(it)
@@ -79,21 +79,20 @@ class OtherFeaturesViewModel @Inject constructor() : ViewModel() {
             }
             10 -> resultText.postValue(FlurryAgent.isSessionActive().toString())
             11 -> resultText.postValue(FlurryAgent.getSessionId())
-            12 -> FlurryAgent.onPageView().also { notifyResult(true) }
-            13 -> validateThenLogToFlurry(input1, "Age can not be empty") {
+            12 -> validateThenLogToFlurry(input1, "Age can not be empty") {
                 FlurryAgent.setAge(input1.toInt())
             }
-            14 -> FlurryAgent.setGender(getGenderByte(answerPos)).also { notifyResult(true) }
-            15 -> validateThenLogToFlurry(input1, "User id can not be empty") {
+            13 -> FlurryAgent.setGender(getGenderByte(answerPos)).also { notifyResult(true) }
+            14 -> validateThenLogToFlurry(input1, "User id can not be empty") {
                 FlurryAgent.setUserId(input1)
             }
-            16 -> validateThenLogToFlurry(input1, "Origin name can not be empty") {
+            15 -> validateThenLogToFlurry(input1, "Origin name can not be empty") {
                 FlurryAgent.setSessionOrigin(input1, input2)
             }
-            17 -> validateThenLogToFlurry(input1, "Name can not be empty") {
+            16 -> validateThenLogToFlurry(input1, "Name can not be empty") {
                 FlurryAgent.addSessionProperty(input1, input2)
             }
-            18 -> FlurryAgent.openPrivacyDashboard(FlurryPrivacySession.Request(AnalyticsSampleApplication.context, object : FlurryPrivacySession.Callback {
+            17 -> FlurryAgent.openPrivacyDashboard(FlurryPrivacySession.Request(AnalyticsSampleApplication.context, object : FlurryPrivacySession.Callback {
                 override fun success() {
                     displayToast.setValue("Privacy Dashboard opened successfully")
                 }

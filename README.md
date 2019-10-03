@@ -1,10 +1,9 @@
-# CHANGEME
+# <img src=".buildscript/flurrylogo.png" width="30"/> Flurry Analytics Sample App - Android(Kotlin)
 
-You might be wondering, why is this README here when I chose not to initialize one? 
+## Overview
+This project showcases how Flurry Analytics can be integrated into your Android App. It also demonstrates how you can use Flurry Analytics to get basic insights into your users and app performance. 
 
-Bare repositories have a default branch set to *master* but it doesn't exist yet. 
-Using our admin account *svc-ghe-admin*, we have committed this file so that *master* exists.
+## Project Setup
 
-* Branch protection is required by Ministry of Code. Find more details at http://yo/moc-faq
-* Automatic Branch Protection is provided by DPS SCM. Contact us at dpse@verizonmedia.com or Slack #github-support
-* The admin account is managed by DPS SCM.  For more info, go [here](https://confluence.ouroath.com/display/SCM/Github+Enterprise+Administrative+User)
+1. Clone your repository and open the project in Android Studio. 
+2. Build project and launch on emulator or device. 
