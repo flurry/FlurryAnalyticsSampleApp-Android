@@ -3,7 +3,7 @@
 buildscript {
     ext{
         kotlin_version = '1.3.31'
-        flurry_version = '11.6.0'
+        flurry_version = '12.0.0'
         dagger_version = '2.23.1'
     }
 
@@ -26,7 +26,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://edge.artifactory.ouroath.com:4443/artifactory/android-local-snapshot' }
     }
 }
 
